@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <title>TODO List</title>
+    <style>
+      body{
+        background-color: black;
+        color: white;
+      }
+      nav{
+        background-image: linear-gradient(to right,rgb(31, 4, 155),rgb(0, 247, 255));
+      }
+      .container{
+        width: 60vw;
+      }
+      .btn{
+        border: 3px solid rgb(0, 247, 255);
+        background-color: transparent;
+        margin-top: 2vh;
+        margin-right: 2vw;
+        margin-bottom: 2vh;
+        color: white;
+      }
+      .table{
+        color: rgba(255, 255, 255, 0.425);
+      }
+      @media screen and (max-width:500px) {
+        .noitemtext{
+          visibility:collapse;
+        }
+        .table{
+          font-size: small;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">ToDo-List</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Completed</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Tasks
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#">Learn js</a></li>
+                            <li><a class="dropdown-item" href="#">Do Project</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">Do more project</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled">Points Earned</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <div class="container my-4">
+        <h1 class="text-center">My TODO List</h1>
+
+        <form>
+            <div class="mb-3">
+              <label for="task-title" class="form-label">Task Title</label>
+              <input type="text" class="form-control" id="task-title" aria-describedby="task-title" required>
+              <div id="task-help" class="form-text">Enter name of the task to add to todo list</div>
+            </div>
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <textarea class="form-control" id="description" placeholder="Required description of todo" required></textarea>
+                <div class="invalid-feedback">
+                  Please enter a description of the task.
+                </div>
+              </div> 
+            
+            <button id="add" type="" class="btn btn-primary">Add to TODO List</button>
+            <button id="add" type="" class="btn btn-primary" onclick="clearStorage()">Clear Todos</button>
+
+          </form>
+          <div id="item" my-5>
+            <h1>Items</h1>  
+            <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Sl. No</th>
+                    <th scope="col">My Todos</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="table-body">
+<!-- 
+                  <tr><td><p class="color-light">No items to display</p>
+                  </td> -->
+                    <!-- <th scope="row">1</th>
+                    <td>Learn js</td>
+                    <td>Learning javascript is higher priorty above all</td>
+                    <td><button class="btn btn-sm btn-primary">Delete</button></td> -->
+                  </tr>
+                </tbody>
+              </table>    
+        </div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" 
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+    <script src="index.js"></script>
+  </body>
+</html>
